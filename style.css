@@ -1,0 +1,287 @@
+/* =====================
+   CSS RESET & VARIABLES
+===================== */
+:root {
+  --primary: #2563eb;
+  /* Blue-600 */
+  --secondary: #1e293b;
+  /* Slate-800 */
+  --accent: #22c55e;
+  /* Green-500 */
+  --bg: #f8fafc;
+  /* Light background */
+  --card-bg: #ffffff;
+  --text: #334155;
+  --muted: #64748b;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* =====================
+   GLOBAL
+===================== */
+.container {
+  width: min(1100px, 90%);
+  margin: auto;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+h2 {
+  font-size: 2.3rem;
+  color: var(--secondary);
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+p {
+  color: var(--muted);
+}
+
+/* =====================
+   NAVBAR (STICKY + PRO)
+===================== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: var(--primary);
+  transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* =====================
+   HERO SECTION (ELITE)
+===================== */
+.hero {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: white;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  min-height: 90vh;
+}
+
+.hero-text h2 {
+  color: white;
+  font-size: 3rem;
+  text-align: left;
+}
+
+.hero-text span {
+  color: #a5f3fc;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin: 1.5rem 0;
+  color: #e0f2fe;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: white;
+  color: var(--primary);
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* HERO IMAGE */
+.hero-image img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* =====================
+   ABOUT
+===================== */
+.about p {
+  max-width: 800px;
+  margin: auto;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+/* =====================
+   PROJECTS (COMPANY-GRADE)
+===================== */
+.projects {
+  display: grid;
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.project-card h3 {
+  color: var(--secondary);
+  margin-bottom: 0.3rem;
+}
+
+.project-card p {
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.project-card ul {
+  padding-left: 1.2rem;
+}
+
+.project-card li {
+  margin-bottom: 0.5rem;
+}
+
+/* =====================
+   RESUME
+===================== */
+.resume ul {
+  margin-bottom: 1.5rem;
+}
+
+.resume li {
+  margin-bottom: 0.6rem;
+}
+
+/* =====================
+   CONTACT
+===================== */
+.contact {
+  text-align: center;
+}
+
+.contact p {
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.socials a {
+  font-size: 1.8rem;
+  margin: 0 0.7rem;
+  color: var(--primary);
+  transition: transform 0.3s ease;
+}
+
+.socials a:hover {
+  transform: scale(1.2);
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-text h2 {
+    text-align: center;
+  }
+
+  nav ul {
+    display: none;
+  }
+}
