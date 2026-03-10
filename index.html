@@ -1,118 +1,749 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Abhishek Rajendra Bhosale ― Java Developer</title>
+  <title>Abhishek Bhosale — Java Developer</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 </head>
-
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="container">
-      <h1 class="logo">Abhishek Bhosale</h1>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<canvas id="canvas-bg"></canvas>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a href="#hero" class="logo">AB<span class="dot">.</span></a>
       <ul>
         <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
         <li><a href="#resume">Resume</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="https://github.com/Abhishekb2002" target="_blank" class="nav-gh">
+          <i class="fab fa-github"></i> GitHub
+        </a></li>
       </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-container">
-      <div class="hero-text">
-        <h2>Hello, I’m <span>Abhishek Rajendra Bhosale</span></h2>
-        <p>Java Developer | Spring Boot | REST APIs | React.js</p>
-        <a href="#contact" class="btn">Get In Touch</a>
+<!-- ═══════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="orb" style="width:500px;height:500px;background:var(--primary);top:-150px;right:10%"></div>
+  <div class="orb" style="width:400px;height:400px;background:var(--accent);bottom:-100px;left:5%"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <!-- Left: Text -->
+      <div>
+        <div class="hero-eyebrow">
+          <span class="pulse"></span> Available for opportunities
+        </div>
+        <h1 class="hero-name">
+          Abhishek<br>
+          <span class="highlight">Rajendra Bhosale</span>
+        </h1>
+        <p class="hero-role" id="typed-role">&gt; Java Developer <span class="cursor-blink">|</span></p>
+        <p class="hero-desc">
+          Building robust, scalable backend systems and modern web experiences.
+          Passionate about clean code, performance, and solving real-world problems with
+          <strong style="color:var(--primary)">Spring Boot</strong>,
+          <strong style="color:var(--accent)">REST APIs</strong>, and
+          <strong style="color:var(--green)">React.js</strong>.
+        </p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary"><i class="fa-solid fa-paper-plane"></i> Get In Touch</a>
+          <a href="https://github.com/Abhishekb2002" target="_blank" class="btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://drive.google.com/uc?export=download&id=1yl9KesF4LLJOZ__sm17C-YeFTOdj6Bwx" target="_blank" class="btn-ghost"><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="stat-num">2<span>+</span></div><div class="stat-label">Years Exp</div></div>
+          <div><div class="stat-num">6<span>+</span></div><div class="stat-label">Projects</div></div>
+          <div><div class="stat-num">10<span>+</span></div><div class="stat-label">Technologies</div></div>
+        </div>
+      </div>
+      <!-- Right: Profile Card -->
+      <div class="hero-card-wrap">
+        <span class="tech-float" style="top:12%;right:-10px">☕ Java</span>
+        <span class="tech-float" style="bottom:18%;left:-20px;animation-delay:2s">⚛️ React.js</span>
+        <div class="hero-card">
+          <img src="assets/images/AbhishekBhosale.jpeg" alt="Abhishek" class="hero-avatar"/>
+          <div class="hero-card-name">Abhishek Rajendra Bhosale</div>
+          <div class="hero-card-role">Java Developer @ HulkHire &amp; GrowingFlowers</div>
+          <div class="hero-card-info">
+            <div class="info-row"><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra, India</div>
+            <div class="info-row"><i class="fa-solid fa-graduation-cap"></i> BE Computer Science</div>
+            <div class="info-row">
+              <i class="fa-solid fa-circle" style="color:var(--green);font-size:.5rem"></i> Open to Work
+            </div>
+          </div>
+          <div class="hero-card-links">
+            <a href="https://github.com/Abhishekb2002" target="_blank" class="card-link card-link-gh">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/abhishek-bhosale-778a90221/" target="_blank" class="card-link card-link-li">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT + SKILLS
+════════════════════════════════════════════ -->
+<section class="about-section" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <!-- About Text -->
+      <div class="about-text reveal">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">Crafting Code that<br>Scales &amp; Performs</h2>
+        <div class="section-line"></div>
+        <p>I'm a <strong>Java Developer</strong> with a strong foundation in backend engineering. I've worked across two companies — <strong>HulkHire</strong> and <strong>GrowingFlowers Software Solutions LLP</strong> — building production-grade applications using <strong>Spring Boot</strong>, secure <strong>REST APIs</strong>, and <strong>Microservices</strong> architecture.</p>
+        <p>I'm deeply interested in cloud infrastructure, distributed systems, and writing code that is not just functional but maintainable and elegant. I enjoy testing my code with <strong>Mockito</strong> and documenting APIs with Swagger. Always learning, always building.</p>
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <i class="fa-solid fa-server"></i>
+            <h4>Backend Dev</h4>
+            <p>Spring Boot, REST APIs, Hibernate</p>
+          </div>
+          <div class="highlight-card">
+            <i class="fa-solid fa-cubes"></i>
+            <h4>Microservices</h4>
+            <p>Modular, scalable architectures</p>
+          </div>
+          <div class="highlight-card">
+            <i class="fa-solid fa-database"></i>
+            <h4>Databases</h4>
+            <p>MySQL, PostgreSQL, MongoDB</p>
+          </div>
+          <div class="highlight-card">
+            <i class="fa-solid fa-layer-group"></i>
+            <h4>Full Stack</h4>
+            <p>React.js + Spring Boot</p>
+          </div>
+        </div>
+      </div>
+      <!-- Skills -->
+      <div class="skills-column reveal">
+        <div class="section-label">Technical Skills</div>
+        <h2 class="section-title" style="font-size:1.8rem">Expertise &amp;<br>Proficiency</h2>
+        <div class="section-line"></div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">// Languages</div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name"><i class="fab fa-java"></i> Java</span>
+              <span class="skill-bar-pct">90%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" style="--w:90%"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name"><i class="fab fa-js"></i> JavaScript</span>
+              <span class="skill-bar-pct">75%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" style="--w:75%"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name"><i class="fa-solid fa-code"></i> C / C++</span>
+              <span class="skill-bar-pct">70%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" style="--w:70%"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">// Frameworks &amp; Libraries</div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name"><i class="fa-solid fa-leaf"></i> Spring Boot</span>
+              <span class="skill-bar-pct">88%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" style="--w:88%"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name"><i class="fab fa-react"></i> React.js</span>
+              <span class="skill-bar-pct">72%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" style="--w:72%"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name"><i class="fa-solid fa-shield"></i> Hibernate / JPA</span>
+              <span class="skill-bar-pct">82%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" style="--w:82%"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name"><i class="fa-solid fa-vial"></i> Mockito / JUnit</span>
+              <span class="skill-bar-pct">75%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" style="--w:75%"></div></div>
+          </div>
+        </div>
+
+        <div class="tech-cloud">
+          <span class="tech-pill"><i class="fa-solid fa-cubes"></i> Microservices</span>
+          <span class="tech-pill"><i class="fab fa-docker"></i> Docker</span>
+          <span class="tech-pill"><i class="fab fa-aws"></i> AWS</span>
+          <span class="tech-pill"><i class="fa-solid fa-database"></i> MySQL</span>
+          <span class="tech-pill"><i class="fa-solid fa-leaf"></i> MongoDB</span>
+          <span class="tech-pill"><i class="fa-solid fa-file-code"></i> Swagger</span>
+          <span class="tech-pill"><i class="fa-solid fa-flask"></i> Postman</span>
+          <span class="tech-pill"><i class="fab fa-git-alt"></i> Git</span>
+          <span class="tech-pill"><i class="fa-solid fa-key"></i> JWT / OAuth2</span>
+          <span class="tech-pill"><i class="fa-solid fa-vial"></i> Mockito</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     EXPERIENCE
+════════════════════════════════════════════ -->
+<section class="experience-section" id="experience">
+  <div class="orb" style="width:300px;height:300px;background:var(--accent);top:30%;right:0;opacity:.07"></div>
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:1rem">
+      <div class="section-label">Work History</div>
+      <h2 class="section-title">Experience</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="timeline reveal">
+
+      <!-- HulkHire -->
+      <div class="timeline-item">
+        <div class="timeline-date"><i class="fa-solid fa-calendar"></i> Jul 2024 – Aug 2024</div>
+        <div class="timeline-card">
+          <div class="timeline-role">Java Developer</div>
+          <div class="timeline-company"><i class="fa-solid fa-building"></i> HulkHire</div>
+          <span class="timeline-period"><i class="fa-solid fa-clock"></i> 2 months · Internship / Contract</span>
+          <div class="timeline-desc">
+            Developed and contributed to backend services using Java and Spring Boot. Built and consumed REST APIs, worked on database integrations with MySQL, and participated in code reviews. Gained experience in real-world software delivery workflows and Agile methodology.
+          </div>
+          <div class="timeline-tags">
+            <span class="tag">Java</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">REST API</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Git</span>
+          </div>
+        </div>
       </div>
 
-      <div class="hero-image">
-        <img src="assets/images/AbhishekBhosale.jpeg" alt="Abhishek Bhosale">
+      <!-- GrowingFlowers -->
+      <div class="timeline-item">
+        <div class="timeline-date"><i class="fa-solid fa-calendar"></i> Jul 2025 – Dec 2025</div>
+        <div class="timeline-card">
+          <div class="timeline-role">Java Developer</div>
+          <div class="timeline-company"><i class="fa-solid fa-building"></i> GrowingFlowers Software Solutions LLP</div>
+          <span class="timeline-period"><i class="fa-solid fa-clock"></i> 6 months · Full-Time</span>
+          <div class="timeline-desc">
+            Developed and maintained production backend services using Spring Boot microservices architecture. Designed and implemented secure REST APIs with JWT authentication and role-based access control. Wrote unit tests using Mockito and JUnit, and integrated databases with Hibernate/JPA. Documented APIs using Swagger and conducted API testing with Postman.
+          </div>
+          <div class="timeline-tags">
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Microservices</span>
+            <span class="tag">REST API</span>
+            <span class="tag">JWT</span>
+            <span class="tag">Mockito</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Hibernate</span>
+            <span class="tag">Swagger</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Txon Internship -->
+      <div class="timeline-item">
+        <div class="timeline-date"><i class="fa-solid fa-calendar"></i> Feb 2023 – Mar 2023</div>
+        <div class="timeline-card">
+          <div class="timeline-role">Web Development Intern</div>
+          <div class="timeline-company"><i class="fa-solid fa-building"></i> Txon</div>
+          <span class="timeline-period"><i class="fa-solid fa-clock"></i> 2 months · Internship</span>
+          <div class="timeline-desc">
+            Built frontend web components and integrated APIs. Gained hands-on experience with HTML, CSS, JavaScript, and collaborative development using Git.
+          </div>
+          <div class="timeline-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Git</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PROJECTS
+════════════════════════════════════════════ -->
+<section class="projects-section" id="projects">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;margin-bottom:1rem">
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="section-line" style="margin:0 auto 3rem"></div>
+    </div>
+    <div class="projects-grid">
+
+      <!-- Smart Contract Management -->
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div class="project-icon"><i class="fa-solid fa-file-contract"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/Abhishekb2002/smart-contract-management" target="_blank" class="proj-link" title="GitHub Repo"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/Abhishekb2002/smart-contract-management" target="_blank" class="proj-link" title="View Project"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="project-title">Smart Contract Management</div>
+        <div class="project-desc">Full-stack contract management system with complete CRUD operations, JWT-based authentication, and role-based access control built on a robust Spring Boot REST API backend.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Spring Boot</span>
+          <span class="stack-tag">Thymeleaf</span>
+          <span class="stack-tag">Hibernate</span>
+          <span class="stack-tag">MySQL</span>
+          <span class="stack-tag">JWT</span>
+        </div>
+      </div>
+
+      <!-- Image Generation GAN -->
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div class="project-icon"><i class="fa-solid fa-brain"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/Abhishekb2002/image-generation-gan" target="_blank" class="proj-link" title="GitHub Repo"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/Abhishekb2002/image-generation-gan" target="_blank" class="proj-link" title="View Project"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="project-title">Image Generation Using GAN</div>
+        <div class="project-desc">GAN implementation for realistic image synthesis. Python/ML backend paired with a React.js frontend for real-time image generation and interactive display.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">Machine Learning</span>
+          <span class="stack-tag">React.js</span>
+          <span class="stack-tag">GAN</span>
+        </div>
+      </div>
+
+      <!-- Student Management System -->
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div class="project-icon"><i class="fa-solid fa-user-graduate"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/Abhishekb2002/student-management-system" target="_blank" class="proj-link" title="GitHub Repo"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/Abhishekb2002/student-management-system" target="_blank" class="proj-link" title="View Project"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="project-title">Student Management System</div>
+        <div class="project-desc">Full-stack application for managing students, courses and academic performance. Spring Boot REST API integrated seamlessly with a React.js frontend dashboard.</div>
+        <div class="project-stack">
+          <span class="stack-tag">React.js</span>
+          <span class="stack-tag">Spring Boot</span>
+          <span class="stack-tag">Hibernate</span>
+          <span class="stack-tag">MySQL</span>
+        </div>
+      </div>
+
+      <!-- Hospital Management System -->
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div class="project-icon"><i class="fa-solid fa-hospital"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/Abhishekb2002/hospital-management-system" target="_blank" class="proj-link" title="GitHub Repo"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/Abhishekb2002/hospital-management-system" target="_blank" class="proj-link" title="View Project"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="project-title">Hospital Management System</div>
+        <div class="project-desc">Comprehensive hospital management platform to handle patient records, doctor scheduling, appointment booking, and billing. Secure role-based access for admins, doctors, and patients.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Spring Boot</span>
+          <span class="stack-tag">React.js</span>
+          <span class="stack-tag">MySQL</span>
+          <span class="stack-tag">Hibernate</span>
+          <span class="stack-tag">JWT</span>
+        </div>
+      </div>
+
+      <!-- Job Portal App -->
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div class="project-icon"><i class="fa-solid fa-briefcase"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/Abhishekb2002/job-portal-app" target="_blank" class="proj-link" title="GitHub Repo"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/Abhishekb2002/job-portal-app" target="_blank" class="proj-link" title="View Project"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="project-title">Job Portal Application</div>
+        <div class="project-desc">Full-stack job portal with separate dashboards for job seekers and employers. Features include job posting, application management, search/filter by role &amp; location, and resume upload.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Spring Boot</span>
+          <span class="stack-tag">React.js</span>
+          <span class="stack-tag">MySQL</span>
+          <span class="stack-tag">REST API</span>
+          <span class="stack-tag">JWT</span>
+        </div>
+      </div>
+
+      <!-- Portfolio App -->
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div class="project-icon"><i class="fa-solid fa-address-card"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/Abhishekb2002" target="_blank" class="proj-link" title="GitHub Repo"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/Abhishekb2002" target="_blank" class="proj-link" title="View Project"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="project-title">Portfolio Website</div>
+        <div class="project-desc">This very portfolio — a production-grade personal site with animated particle background, typed text effects, custom cursor, smooth scroll reveal, and a fully responsive dark theme.</div>
+        <div class="project-stack">
+          <span class="stack-tag">HTML5</span>
+          <span class="stack-tag">CSS3</span>
+          <span class="stack-tag">JavaScript</span>
+          <span class="stack-tag">Canvas API</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="projects-cta">
+      <a href="https://github.com/Abhishekb2002" target="_blank" class="btn-ghost">
+        <i class="fab fa-github"></i> View All Projects on GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     EDUCATION
+════════════════════════════════════════════ -->
+<section class="education-section" id="education">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;margin-bottom:1rem">
+      <div class="section-label">Academic</div>
+      <h2 class="section-title">Education</h2>
+      <div class="section-line" style="margin:0 auto 3rem"></div>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="edu-degree">BE — Computer Science</div>
+        <div class="edu-school">Smt. Kashibai Navale College Of Engineering, Pune</div>
+        <div class="edu-year"><i class="fa-solid fa-calendar-days"></i> 2021 – 2024</div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-degree">HSC — Higher Secondary</div>
+        <div class="edu-school">Dada Patil College, Karjat</div>
+        <div class="edu-year"><i class="fa-solid fa-calendar-days"></i> 2019 – 2020</div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-degree">SSC — Secondary School</div>
+        <div class="edu-school">D M M V, Nimgaon</div>
+        <div class="edu-year"><i class="fa-solid fa-calendar-days"></i> 2017 – 2018</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-
-  <!-- About -->
-  <section id="about" class="about container">
-    <h2>About Me</h2>
-    <p>I am a passionate Java Developer with experience building backend applications using Spring Boot, REST APIs, and
-      modern web apps. I enjoy solving problems and building scalable software.</p>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="projects container">
-    <h2>Projects</h2>
-
-    <div class="project-card">
-      <h3>Smart Contract Management</h3>
-      <p>Thymeleaf | Spring Boot | Hibernate | MySQL</p>
-      <ul>
-        <li>Designed full CRUD contract system with secure JWT authentication.</li>
-        <li>Role-based access control & robust backend APIs.</li>
-      </ul>
+<!-- ═══════════════════════════════════════════
+     RESUME
+════════════════════════════════════════════ -->
+<section class="resume-section" id="resume">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;margin-bottom:1rem">
+      <div class="section-label">Download</div>
+      <h2 class="section-title">My Resume</h2>
+      <div class="section-line" style="margin:0 auto 3rem"></div>
     </div>
-
-    <div class="project-card">
-      <h3>Image Generation Using GAN</h3>
-      <p>React.js | Python | Machine Learning</p>
-      <ul>
-        <li>Built a GAN implementation for image generation</li>
-        <li>React.js frontend for real-time display</li>
-      </ul>
+    <div class="resume-box reveal">
+      <div class="resume-preview">
+        <div class="resume-icon"><i class="fa-solid fa-file-pdf"></i></div>
+        <h3>Abhishek Bhosale — Resume</h3>
+        <p>Java Developer · Spring Boot · Microservices · REST APIs · React.js<br>Full professional resume with experience, projects &amp; skills.</p>
+        <div class="resume-meta">
+          <div class="resume-meta-item"><i class="fa-solid fa-file"></i> PDF Format</div>
+          <div class="resume-meta-item"><i class="fa-solid fa-calendar"></i> Updated 2025</div>
+          <div class="resume-meta-item"><i class="fab fa-java"></i> Java Developer</div>
+        </div>
+        <div class="resume-btns">
+          <a href="https://drive.google.com/uc?export=download&id=1yl9KesF4LLJOZ__sm17C-YeFTOdj6Bwx" target="_blank" class="btn-download">
+            <i class="fa-solid fa-file-arrow-down"></i> Download PDF
+          </a>
+          <a href="https://drive.google.com/file/d/1yl9KesF4LLJOZ__sm17C-YeFTOdj6Bwx/view?usp=sharing" target="_blank" class="btn-view">
+            <i class="fa-solid fa-eye"></i> View on Drive
+          </a>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="project-card">
-      <h3>Student Management System</h3>
-      <p>React.js | Spring Boot | Hibernate | MySQL</p>
-      <ul>
-        <li>Web app to manage students, courses and performance</li>
-        <li>REST API backend connected with React UI</li>
-      </ul>
+<!-- ═══════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════════ -->
+<section class="contact-section" id="contact">
+  <div class="orb" style="width:400px;height:400px;background:var(--primary);bottom:-100px;left:10%;opacity:.08"></div>
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;margin-bottom:1rem">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Let's Connect</h2>
+      <div class="section-line" style="margin:0 auto 3rem"></div>
     </div>
-  </section>
-
-  <!-- Resume -->
-  <section id="resume" class="resume container">
-    <h2>Resume</h2>
-    <h3>Experience</h3>
-    <ul>
-      <li><strong>Java Developer @ GrowingFlowers Software Solutions LLP</strong> (Jan 2025 – Present)</li>
-      <li><strong>Web Development Intern @ Txon</strong> (Feb 2023 – Mar 2023)</li>
-    </ul>
-
-    <h3>Education</h3>
-    <ul>
-      <li>Smt. Kashibai Navale College Of Engineering, Pune – BE Computer Science (2021–2024)</li>
-      <li>Dada Patil College, Karjat – HSC (2019–2020)</li>
-      <li>D M M V, Nimgaon – SSC (2017–2018)</li>
-    </ul>
-
-    <h3>Technical Skills</h3>
-    <p>Java, C, C++, JavaScript, HTML, CSS, Spring Boot, React.js, MySQL, MongoDB, Git, Swagger, Postman</p>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact container">
-    <h2>Contact Me</h2>
-    <p>
-      <i class="fa-solid fa-envelope"></i> abhishekbhosale2002@gmail.com <br>
-      <i class="fa-solid fa-phone"></i> +91-8010018653
-    </p>
-    <div class="socials">
-      <!-- <a href="https://github.com/Abhishekb2002" target="_blank"><i class="fab fa-github"></i></a> -->
-      <a href="https://www.linkedin.com/in/abhishek-bhosale-778a90221/" target="_blank"><i
-          class="fab fa-linkedin"></i></a>
+    <div class="contact-grid">
+      <!-- Left: Info -->
+      <div class="contact-text reveal">
+        <p>I'm currently open to new opportunities — full-time roles, freelance projects, or just a great conversation about technology. My inbox is always open. Let's build something amazing together!</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="ci-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="ci-text">
+              <small>Email</small>
+              <a href="mailto:abhishekbhosale2002@gmail.com">abhishekbhosale2002@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="ci-text">
+              <small>Phone</small>
+              <span>+91-8010018653</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="ci-text">
+              <small>Location</small>
+              <span>Pune, Maharashtra, India</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-socials">
+          <a href="https://github.com/Abhishekb2002" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/abhishek-bhosale-778a90221/" target="_blank" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:abhishekbhosale2002@gmail.com" class="social-icon" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <!-- Right: Form -->
+      <div class="contact-form reveal">
+        <h3><i class="fa-solid fa-message" style="color:var(--primary);margin-right:.5rem"></i>Send a Message</h3>
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="John Doe"/>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="john@example.com"/>
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" placeholder="Job Opportunity / Collaboration"/>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Hi Abhishek, I'd like to discuss..."></textarea>
+        </div>
+        <button class="btn-send" onclick="handleSend(this)">
+          <i class="fa-solid fa-paper-plane"></i> Send Message
+        </button>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
+<!-- ═══════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <p>© 2025 <strong style="color:#fff">Abhishek Bhosale</strong> · Java Developer</p>
+      <p>Built with ❤️ ·
+        <a href="https://github.com/Abhishekb2002" target="_blank">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/abhishek-bhosale-778a90221/" target="_blank">LinkedIn</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════ -->
+<script>
+/* ── CUSTOM CURSOR ── */
+const cursor = document.getElementById('cursor');
+const ring   = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left = mx - 5 + 'px';
+  cursor.style.top  = my - 5 + 'px';
+});
+
+(function animRing() {
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  ring.style.left = rx - 18 + 'px';
+  ring.style.top  = ry - 18 + 'px';
+  requestAnimationFrame(animRing);
+})();
+
+document.querySelectorAll('a, button').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    ring.style.transform   = 'scale(1.6)';
+    ring.style.borderColor = 'rgba(56,189,248,.8)';
+  });
+  el.addEventListener('mouseleave', () => {
+    ring.style.transform   = 'scale(1)';
+    ring.style.borderColor = 'rgba(56,189,248,.5)';
+  });
+});
+
+/* ── PARTICLE CANVAS ── */
+const canvas = document.getElementById('canvas-bg');
+const ctx    = canvas.getContext('2d');
+let W, H, pts = [];
+
+function resize() {
+  W = canvas.width  = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+class Pt {
+  constructor() { this.reset(); }
+  reset() {
+    this.x  = Math.random() * W;
+    this.y  = Math.random() * H;
+    this.r  = Math.random() * 1.5 + 0.3;
+    this.vx = (Math.random() - 0.5) * 0.35;
+    this.vy = (Math.random() - 0.5) * 0.35;
+    this.a  = Math.random() * 0.35 + 0.1;
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(56,189,248,${this.a})`;
+    ctx.fill();
+  }
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    if (this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
+  }
+}
+
+for (let i = 0; i < 130; i++) pts.push(new Pt());
+
+function drawLines() {
+  for (let i = 0; i < pts.length; i++) {
+    for (let j = i + 1; j < pts.length; j++) {
+      const dx = pts[i].x - pts[j].x;
+      const dy = pts[i].y - pts[j].y;
+      const d  = Math.sqrt(dx * dx + dy * dy);
+      if (d < 110) {
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(56,189,248,${0.06 * (1 - d / 110)})`;
+        ctx.lineWidth   = 0.5;
+        ctx.moveTo(pts[i].x, pts[i].y);
+        ctx.lineTo(pts[j].x, pts[j].y);
+        ctx.stroke();
+      }
+    }
+  }
+}
+
+(function anim() {
+  ctx.clearRect(0, 0, W, H);
+  pts.forEach(p => { p.update(); p.draw(); });
+  drawLines();
+  requestAnimationFrame(anim);
+})();
+
+/* ── NAVBAR SCROLL ── */
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', scrollY > 50);
+});
+
+/* ── SCROLL REVEAL ── */
+const revObs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      revObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(r => revObs.observe(r));
+
+/* ── SKILL BARS ── */
+const skillObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.skill-fill').forEach(b => b.classList.add('animated'));
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.skills-column').forEach(el => skillObs.observe(el));
+
+/* ── TYPED ROLE TEXT ── */
+const roles  = ['Java Developer', 'Spring Boot Engineer', 'Microservices Architect', 'Backend Developer', 'Full Stack Dev'];
+let ri = 0, ci = 0, del = false;
+const roleEl = document.getElementById('typed-role');
+
+function type() {
+  const cur = roles[ri];
+  if (!del) {
+    roleEl.innerHTML = `&gt; ${cur.slice(0, ci + 1)} <span class="cursor-blink">|</span>`;
+    ci++;
+    if (ci === cur.length) { del = true; setTimeout(type, 2000); return; }
+  } else {
+    roleEl.innerHTML = `&gt; ${cur.slice(0, ci - 1)} <span class="cursor-blink">|</span>`;
+    ci--;
+    if (ci === 0) { del = false; ri = (ri + 1) % roles.length; }
+  }
+  setTimeout(type, del ? 60 : 100);
+}
+type();
+
+/* ── SEND BUTTON FEEDBACK ── */
+function handleSend(btn) {
+  btn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
+  btn.style.background = 'var(--green)';
+  setTimeout(() => {
+    btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+    btn.style.background = '';
+  }, 3000);
+}
+
+/* ── SMOOTH NAV LINKS ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
 </body>
-
 </html>
